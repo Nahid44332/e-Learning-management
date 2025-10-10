@@ -15,4 +15,8 @@ class AdminController extends Controller
     {
         return view ('backend.dashboard');
     }
+    public function activeUsers()
+    {
+        return view('backend.active-users');
+    }
 }

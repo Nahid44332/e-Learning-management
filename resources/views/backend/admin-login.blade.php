@@ -95,7 +95,7 @@
         </div>
         <div class="input-field">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password" required>
         </div>
 
         <div class="btn">

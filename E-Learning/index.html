@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Learn Advanced</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            accent: '#7c3aed'
+          },
+          keyframes: { floaty: { '0%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' }, '100%': { transform: 'translateY(0)' } } },
+          animation: { floaty: 'floaty 6s ease-in-out infinite' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+
+<!-- NAVBAR -->
+<header class="fixed inset-x-0 top-0 z-50 bg-white/75 dark:bg-gray-900/75 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" class="w-8 h-8" alt="Logo">
+        <span class="font-extrabold text-lg text-primary dark:text-white">E-Learn</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" class="hover:text-primary">Home</a>
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#courses" class="hover:text-primary">Courses</a>
+        <a href="#teachers" class="hover:text-primary">Teachers</a>
+        <a href="#faq" class="hover:text-primary">FAQ</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="admin-login.html" class="hidden sm:inline-flex px-4 py-2 rounded-md bg-primary text-white text-sm hover:brightness-95">Admin Login</a>
+        <a href="sub-admin-login.html" class="hidden sm:inline-flex px-3 py-2 rounded-md border border-primary text-primary text-sm hover:bg-primary hover:text-white transition">Sub Admin</a>
+        <button id="themeToggle" class="p-2 rounded-md bg-gray-100 dark:bg-gray-800" aria-label="Toggle theme">🌙</button>
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md bg-gray-100 dark:bg-gray-800" aria-expanded="false" aria-controls="mobileMenu">
+          <svg id="icOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+          <svg id="icClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="lg:hidden hidden pb-4">
+      <nav class="flex flex-col gap-2 px-1">
+        <a href="#home" class="px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+        <a href="#about" class="px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+        <a href="#courses" class="px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Courses</a>
+        <a href="#teachers" class="px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Teachers</a>
+        <a href="#faq" class="px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">FAQ</a>
+        <a href="#contact" class="px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+        <div class="flex gap-2 pt-2">
+          <button class="flex-1 px-3 py-2 rounded-md bg-primary text-white">Admin Login</button>
+          <button class="flex-1 px-3 py-2 rounded-md border border-primary text-primary">Sub Admin</button>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="pt-20">
+
+<!-- HERO -->
+<section id="home" class="relative overflow-hidden pt-8 pb-20">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 space-y-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-max">
+          <span class="text-primary font-semibold">New</span>
+          <span class="text-xs text-gray-600 dark:text-gray-300">250+ courses added this month</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Learn industry-ready skills with <span class="text-primary">hands-on</span> projects & mentorship
+        </h1>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl">
+          Practical courses designed and delivered by industry experts. Build portfolio projects and earn verified certificates.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="login.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-blue-600 transition">Login</a>
+          <a href="register.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition">Register</a>
+        </div>
+        <!-- Stats Horizontal -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div><h3 class="text-3xl font-extrabold text-primary counter" data-target="5000">0</h3><p class="text-gray-600 dark:text-gray-400 font-medium">Students</p></div>
+          <div><h3 class="text-3xl font-extrabold text-primary counter" data-target="200">0</h3><p class="text-gray-600 dark:text-gray-400 font-medium">Teachers</p></div>
+          <div><h3 class="text-3xl font-extrabold text-primary counter" data-target="350">0</h3><p class="text-gray-600 dark:text-gray-400 font-medium">Courses</p></div>
+          <div><h3 class="text-3xl font-extrabold text-primary counter" data-target="25">0</h3><p class="text-gray-600 dark:text-gray-400 font-medium">Awards</p></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-md">
+          <div class="absolute -left-10 -top-10 w-44 h-44 bg-gradient-to-tr from-primary/30 to-accent/30 rounded-full blur-3xl opacity-60 animate-floaty"></div>
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl transform hover:scale-[1.02] transition">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="featured course" class="rounded-lg mb-4 w-full h-52 object-cover" />
+            <h3 class="font-semibold text-lg">Featured: Frontend Mastery</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Build real web apps using modern tools and frameworks.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-primary font-bold">৳1200</span>
+              <button class="px-3 py-1 rounded bg-primary text-white text-sm">Enroll</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-16">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">About E-Learn</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
+          E-Learn empowers learners with project-based courses, experienced instructors, and real-world assessments.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex gap-3 items-start">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white font-bold">✓</span>
+            <div><div class="font-semibold">Project-based learning</div><div class="text-sm text-gray-500 dark:text-gray-400">Build portfolio-worthy projects.</div></div>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent text-white font-bold">★</span>
+            <div><div class="font-semibold">Mentors & Reviews</div><div class="text-sm text-gray-500 dark:text-gray-400">Receive feedback from industry pros.</div></div>
+          </li>
+        </ul>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=800&auto=format&fit=crop" alt="about image" class="rounded-2xl shadow-lg w-full object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-center mb-12">Our Popular Courses</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="images/download.jpeg" alt="course" class="w-full h-48 object-cover"/>
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Full Stack Web Development</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Master HTML, CSS, JS, React and build real-world projects.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-primary font-bold">৳1000</span>
+            <button class="px-3 py-1 rounded bg-primary text-white text-sm">Enroll</button>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="images/download.jpeg" alt="course" class="w-full h-48 object-cover"/>
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">Backend Development</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Learn Node.js, Express, MongoDB & build APIs from scratch.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-primary font-bold">৳1200</span>
+            <button class="px-3 py-1 rounded bg-primary text-white text-sm">Enroll</button>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="images/download.jpeg" alt="course" class="w-full h-48 object-cover"/>
+        <div class="p-5">
+          <h3 class="font-semibold text-lg mb-2">UI/UX Design</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Learn Figma, prototyping, and modern UI/UX design principles.</p>
+          <div class="flex justify-between items-center">
+            <span class="text-primary font-bold">৳900</span>
+            <button class="px-3 py-1 rounded bg-primary text-white text-sm">Enroll</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section id="teachers" class="py-16">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-center mb-12">Meet Our Expert Teachers</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center bg-white dark:bg-gray-800 rounded-2xl p-5 shadow hover:shadow-lg transition">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" alt="teacher">
+        <h4 class="font-semibold text-lg mb-1">John Doe</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm">Frontend Mentor</p>
+      </div>
+      <div class="text-center bg-white dark:bg-gray-800 rounded-2xl p-5 shadow hover:shadow-lg transition">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" alt="teacher">
+        <h4 class="font-semibold text-lg mb-1">Jane Smith</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm">UI/UX Designer</p>
+      </div>
+      <div class="text-center bg-white dark:bg-gray-800 rounded-2xl p-5 shadow hover:shadow-lg transition">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" alt="teacher">
+        <h4 class="font-semibold text-lg mb-1">Mike Johnson</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm">Backend Expert</p>
+      </div>
+      <div class="text-center bg-white dark:bg-gray-800 rounded-2xl p-5 shadow hover:shadow-lg transition">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover" alt="teacher">
+        <h4 class="font-semibold text-lg mb-1">Emily Davis</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm">Data Science</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STUDENT REVIEWS -->
+<section id="reviews" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-center mb-12">Success Student Reviews</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Review Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="student" class="w-20 h-20 rounded-full mb-4 object-cover">
+        <h4 class="font-semibold text-lg mb-1">Emily Davis</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Frontend Development</p>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">"This course helped me land my dream job! The mentors were amazing and the projects were real-world."</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="student" class="w-20 h-20 rounded-full mb-4 object-cover">
+        <h4 class="font-semibold text-lg mb-1">John Doe</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Backend Development</p>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">"The backend course was structured perfectly. I feel confident in building APIs and full-stack apps now."</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="student" class="w-20 h-20 rounded-full mb-4 object-cover">
+        <h4 class="font-semibold text-lg mb-1">Jane Smith</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">UI/UX Design</p>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">"Learning UI/UX here changed my design approach completely. The portfolio I built helped me get clients instantly."</p>
+      </div>
+
+      <!-- আরো student review এড করতে চাইলে একইভাবে কার্ড কপি করো -->
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-center mb-12">Frequently Asked Questions</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+          <summary class="font-semibold cursor-pointer">How long do courses last?</summary>
+          <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Most courses are 4-12 weeks long with flexible learning schedules.</p>
+        </details>
+        <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+          <summary class="font-semibold cursor-pointer">Do I get a certificate?</summary>
+          <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Yes, verified certificate issued upon completion of the course.</p>
+        </details>
+      </div>
+      <div class="space-y-4">
+        <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+          <summary class="font-semibold cursor-pointer">Are courses self-paced?</summary>
+          <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Most courses are self-paced but with weekly mentor sessions.</p>
+        </details>
+        <details class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+          <summary class="font-semibold cursor-pointer">Can I switch courses?</summary>
+          <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Yes, you can switch courses anytime within the first week.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / NEWSLETTER -->
+<section id="contact" class="py-16">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8">
+    <div class="bg-primary/5 dark:bg-gray-800 rounded-2xl p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl font-extrabold mb-4">Stay Updated</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">Subscribe to our newsletter for the latest courses and offers.</p>
+        <form class="flex flex-col sm:flex-row gap-3">
+          <input type="email" placeholder="Your Email" class="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-900"/>
+          <button type="submit" class="px-5 py-3 rounded-lg bg-primary text-white hover:bg-blue-600 transition">Subscribe</button>
+        </form>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443e4f?q=80&w=600&auto=format&fit=crop" alt="newsletter" class="rounded-2xl shadow-lg object-cover w-full h-64"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 dark:bg-gray-800 py-10">
+  <div class="container mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <h3 class="text-lg font-semibold mb-2">E-Learn</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm">Empowering learners globally with skills and knowledge for career growth.</p>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-gray-600 dark:text-gray-300 text-sm">
+        <li><a href="#about" class="hover:text-primary">About</a></li>
+        <li><a href="#courses" class="hover:text-primary">Courses</a></li>
+        <li><a href="#teachers" class="hover:text-primary">Teachers</a></li>
+        <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Contact</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm">Email: support@elearn.com</p>
+      <p class="text-gray-600 dark:text-gray-300 text-sm">Phone: +880 1234 567890</p>
+    </div>
+  </div>
+  <div class="mt-8 text-center text-gray-500 dark:text-gray-400 text-sm">© 2025 E-Learn. All rights reserved.</div>
+</footer>
+
+<!-- COUNTER SCRIPT -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const speed = 80;
+      const increment = target / speed;
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+    updateCount();
+  });
+</script>
+
+<!-- MOBILE MENU & DARK MODE -->
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const icOpen = document.getElementById('icOpen');
+  const icClose = document.getElementById('icClose');
+  mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    icOpen.classList.toggle('hidden');
+    icClose.classList.toggle('hidden');
+  });
+
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+  });
+</script>
+
+</body>
+</html>

@@ -11,4 +11,15 @@ class AuthController extends Controller
     {
         return view('backend.admin-login');
     }
+
+    public function adminlogout()
+    {
+        return redirect('/admin/login');
+    }
+
+    public function login()
+    {
+        return view('backend.login');
+    }
+
 }

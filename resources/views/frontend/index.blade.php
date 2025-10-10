@@ -30,12 +30,12 @@
                         <!-- app buttons -->
                         <ul class="app_btn">
                             <li>
-                                <a href="dashboard/signin.html" clas="btn btn-primary">
+                                <a href="{{url('/login')}}" clas="btn btn-primary">
                                    Login 
                                 </a>
                             </li>
                             <li>
-                                <a href="dashboard/signup.html" clas="btn btn-primary">
+                                <a href="{{url('/register')}}" clas="btn btn-primary">
                                     Sign Up 
                                 </a>
                             </li>
