@@ -1,142 +1,66 @@
- <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
-        <!--begin::Sidebar Brand-->
-        <div class="sidebar-brand">
-          <!--begin::Brand Link-->
-          <a href="{{url('/admin/dashboard')}}" class="brand-link">
-            <!--begin::Brand Image-->
-            <img
-              src="{{asset('backend/dist/assets/img/AdminLTELogo.png')}}"
-              alt="AdminLTE Logo"
-              class="brand-image opacity-75 shadow"
-            />
-            <!--end::Brand Image-->
-            <!--begin::Brand Text-->
-            <span class="brand-text fw-light">Admin Dashboard</span>
-            <!--end::Brand Text-->
-          </a>
-          <!--end::Brand Link-->
+ <aside class="fixed z-30 w-64 h-full bg-white dark:bg-gray-800 shadow-xl overflow-y-auto transition-transform -translate-x-64 peer-checked:translate-x-0 md:translate-x-0">
+    <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+      <a href="{{url('/admin/dashboard')}}"><h1 class="text-2xl font-bold text-primary dark:text-white">E-Learn Admin</h1></a>
+    </div>
+
+    <nav class="mt-4 px-3 space-y-2">
+      <a href="{{url('/admin/dashboard')}}" class="block px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">🏠 Dashboard</a>
+
+      <!-- User Management -->
+      <div>
+        <button onclick="toggleDropdown('userDropdown')" class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">
+          👥 User Management <span id="userDropdownIcon" class="transition-transform">▼</span>
+        </button>
+        <div id="userDropdown" class="hidden ml-4 mt-1 space-y-1">
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Active Student</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Inactive Student</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Teacher</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Trainer</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Team Leader</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Telecaller</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Manager</a>
         </div>
-        <!--end::Sidebar Brand-->
-        <!--begin::Sidebar Wrapper-->
-        <div class="sidebar-wrapper">
-          <nav class="mt-2">
-            <!--begin::Sidebar Menu-->
-            <ul
-              class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-               <li class="nav-item">
-                <a href="{{url('/admin/dashboard')}}" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Dashboard</p>
-                </a>
-              </li>
-              <li class="nav-item menu-close">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-speedometer"></i>
-                  <p>
-                    Users Management
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{url('/admin/active-users')}}" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Active Users</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Deactive Users</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Trainer</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Team Leader</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Senior Team Leader</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Counselor</p>
-                    </a>
-                  </li>
-                </ul>
-                 <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Courses</p>
-                </a>
-              </li>
-               <li class="nav-item menu-close">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-speedometer"></i>
-                  <p>
-                    Withdraw Management
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Student Withdraw</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Teacher Withdraw</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Trainer Withdraw</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Team Leader Withdraw</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Senior Team Leader Withdraw</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Counselor Withdraw</p>
-                    </a>
-                  </li>
-                </ul>
-                 <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Support Team</p>
-                </a>
-              </li>
-              </li>
-            </ul>
-            <!--end::Sidebar Menu-->
-          </nav>
+      </div>
+
+      <a href="#" class="block px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">📚 Course</a>
+
+      <!-- Student Batch -->
+      <div>
+        <button onclick="toggleDropdown('batchDropdown')" class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">
+          🎓 Student Batch <span id="batchDropdownIcon" class="transition-transform">▼</span>
+        </button>
+        <div id="batchDropdown" class="hidden ml-4 mt-1 space-y-1">
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Create Batch</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Batch List</a>
         </div>
-        <!--end::Sidebar Wrapper-->
-      </aside>
+      </div>
+
+      <a href="#" class="block px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">🏅 Certificate</a>
+      <a href="#" class="block px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">👥 Helpline</a>
+
+      <!-- Withdraw Dropdown -->
+      <div>
+        <button onclick="toggleDropdown('withdrawDropdown')" class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">
+          💸 Withdraw <span id="withdrawDropdownIcon" class="transition-transform">▼</span>
+        </button>
+        <div id="withdrawDropdown" class="hidden ml-4 mt-1 space-y-1">
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Student Withdraw</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Teacher Withdraw</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Trainer Withdraw</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Team Leader Withdraw</a>
+        </div>
+      </div>
+
+      <!-- Setting -->
+      <div>
+        <button onclick="toggleDropdown('settingDropdown')" class="w-full flex justify-between items-center px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">
+          ⚙️ Setting <span id="settingDropdownIcon" class="transition-transform">▼</span>
+        </button>
+        <div id="settingDropdown" class="hidden ml-4 mt-1 space-y-1">
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Site Setting</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Profile Setting</a>
+          <a href="#" class="block px-3 py-1 rounded hover:bg-primary/10 dark:hover:bg-primary/20">Credential Setting</a>
+        </div>
+      </div>
+    </nav>
+  </aside>
