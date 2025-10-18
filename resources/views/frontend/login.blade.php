@@ -69,7 +69,7 @@
 
       <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
         Don't have an account? 
-        <a href="{{url('/register')}}" class="text-primary font-semibold hover:underline">Sign up</a>
+        <a href="{{url('/st-register')}}" class="text-primary font-semibold hover:underline">Sign up</a>
       </p>
     </div>
   </div>

@@ -69,12 +69,6 @@
             class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"/>
         </div>
 
-        <div>
-          <label for="confirm_password" class="block text-sm font-medium mb-1">Confirm Password</label>
-          <input type="password" id="confirm_password" name="confirm_password" placeholder="********" required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"/>
-        </div>
-
         <div class="flex items-center gap-2 text-sm">
           <input type="checkbox" id="terms" class="rounded border-gray-300 dark:border-gray-600 focus:ring-primary" required>
           <label for="terms" class="text-gray-600 dark:text-gray-400">I agree to the <a href="#" class="text-primary hover:underline">Terms & Conditions</a></label>
@@ -85,7 +79,7 @@
 
       <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
         Already have an account? 
-        <a href="{{url('/login')}}" class="text-primary font-semibold hover:underline">Login</a>
+        <a href="{{url('/st-login')}}" class="text-primary font-semibold hover:underline">Login</a>
       </p>
     </div>
   </div>

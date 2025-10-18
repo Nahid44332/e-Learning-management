@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,15 +10,16 @@ class FrontendControlller extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $courses = Course::get();
+        return view('frontend.index', compact('courses'));
     }
 
-    public function login()
+    public function studentLogin()
     {
         return view('frontend.login');
     }
 
-    public function register()
+    public function studentRegister()
     {
         return view('frontend.register');
     }
@@ -36,7 +38,7 @@ class FrontendControlller extends Controller
     {
         Auth::logout();
 
-        return redirect('/admin-login');
+        return redirect('/admin/login');
     }
 
     public function subAdminLogin()

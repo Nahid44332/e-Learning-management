@@ -31,4 +31,14 @@
   if(localStorage.getItem('theme')==='dark'){
     document.documentElement.classList.add('dark');
   }
+
+  // Sidebar toggle
+const sidebar = document.querySelector('aside');
+const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+
+sidebarToggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('-translate-x-64'); // hide
+  sidebar.classList.toggle('translate-x-0');   // show
+});
+
 </script>

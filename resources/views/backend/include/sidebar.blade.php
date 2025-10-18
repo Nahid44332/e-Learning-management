@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <a href="#" class="block px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">📚 Course</a>
+      <a href="{{url('/admin/course')}}" class="block px-3 py-2 rounded-md hover:bg-primary/10 dark:hover:bg-primary/20 transition">📚 Course</a>
 
       <!-- Student Batch -->
       <div>

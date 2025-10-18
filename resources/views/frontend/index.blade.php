@@ -84,8 +84,8 @@
         </nav>
 
         <div class="flex items-center gap-3">
-          <a href="{{url('/admin-login')}}" class="hidden sm:inline-flex px-4 py-2 rounded-md bg-primary text-white text-sm hover:scale-105 hover:shadow-md transition-base">Admin Login</a>
-          <a href="{{url('/sub-admin-login')}}" class="hidden sm:inline-flex px-3 py-2 rounded-md border border-primary text-primary text-sm hover:bg-primary hover:text-white transition-base">Sub Admin</a>
+          <a href="{{url('/admin/login')}}" class="hidden sm:inline-flex px-4 py-2 rounded-md bg-primary text-white text-sm hover:scale-105 hover:shadow-md transition-base">Admin Login</a>
+          <a href="{{url('/sub-admin/login')}}" class="hidden sm:inline-flex px-3 py-2 rounded-md border border-primary text-primary text-sm hover:bg-primary hover:text-white transition-base">Sub Admin</a>
 
           <button id="themeToggle" class="p-2 rounded-md bg-gray-100 dark:bg-gray-800 hover:rotate-90 transition-base focus-ring" aria-label="Toggle theme">🌙</button>
 
@@ -135,8 +135,8 @@
             </p>
 
             <div class="flex flex-wrap gap-3">
-              <a href="{{url('/st-login')}}" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:scale-105 hover:shadow-lg transition-base">Login</a>
-              <a href="{{url('/st-register')}}" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-base">Register</a>
+              <a href="{{url('/student/login')}}" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:scale-105 hover:shadow-lg transition-base">Login</a>
+              <a href="{{url('/student/register')}}" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-base">Register</a>
             </div>
 
             <!-- Stats -->
@@ -206,43 +206,20 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Course 1 -->
-          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-base overflow-hidden card-shadow" data-aos="fade-up" data-aos-delay="50">
-            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop" alt="course" class="w-full h-48 object-cover"/>
+         @foreach ($courses as $course)
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-base overflow-hidden card-shadow" data-aos="fade-up"data-aos-delay="50">
+            <img src="{{asset('backend/images/course/'.$course->thumbnail)}}" alt="course" class="w-full h-48 object-cover"/>
             <div class="p-5">
-              <h3 class="font-semibold text-lg mb-2">Full Stack Web Development</h3>
-              <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Master HTML, CSS, JS, React and build real-world projects.</p>
+              <h3 class="font-semibold text-lg mb-2">{{$course->title}}</h3>
+              <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">{{$course->description}}</p>
               <div class="flex justify-between items-center">
-                <span class="text-primary font-bold">৳1000</span>
+                <span class="text-primary font-bold">৳{{$course->price}}</span>
                 <button class="px-3 py-1 rounded bg-primary text-white text-sm hover:scale-105 transition-base">Enroll</button>
               </div>
             </div>
           </div>
-
-          <!-- Course 2 -->
-          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-base overflow-hidden card-shadow" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="course" class="w-full h-48 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold text-lg mb-2">Backend Development</h3>
-              <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Learn Node.js, Express, MongoDB & build APIs from scratch.</p>
-              <div class="flex justify-between items-center">
-                <span class="text-primary font-bold">৳1200</span>
-                <button class="px-3 py-1 rounded bg-primary text-white text-sm hover:scale-105 transition-base">Enroll</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Course 3 -->
-          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-base overflow-hidden card-shadow" data-aos="fade-up" data-aos-delay="150">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="course" class="w-full h-48 object-cover"/>
-            <div class="p-5">
-              <h3 class="font-semibold text-lg mb-2">UI/UX Design</h3>
-              <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Learn Figma, prototyping, and modern UI/UX design principles.</p>
-              <div class="flex justify-between items-center">
-                <span class="text-primary font-bold">৳900</span>
-                <button class="px-3 py-1 rounded bg-primary text-white text-sm hover:scale-105 transition-base">Enroll</button>
-              </div>
-            </div>
-          </div>
+         @endforeach
+  
         </div>
       </div>
     </section>
